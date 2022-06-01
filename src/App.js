@@ -9,7 +9,14 @@ function App() {
 
     <form onSubmit={handleSubmit(onSubmit)}>
 
-      <input defaultValue="test" {...register("example")}/>
+      <label>first name:</label>
+      <input {...register("firstName", { required: true})}/>
+
+      <label>second name:</label>
+      <input {...register("secondName", { required: true})}/>
+
+      <label>postcode:</label>
+      <input {...register("postcode", { required: true})}/>
 
       <input {...register("exampleRequired", { required: true })}/>
 
