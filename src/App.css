@@ -4,9 +4,26 @@ html {
 }
 
 form {
-  width: 300px;
+  width: calc(60% - 10px);
   margin: 50px auto;
   background: white;
   padding: 50px;
+  border-radius: 5px;
+  display: grid;
+  grid-gap: 30px;
+}
+
+.field-wrapper {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 2fr;
+}
+
+.submit-button {
+  justify-self: end;
+  background: #222;
+  color: white;
+  padding: 10px;
+  border: none;
   border-radius: 5px;
 }

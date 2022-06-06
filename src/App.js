@@ -1,7 +1,7 @@
 import './App.css';
-import { useForm, SubmitHandler } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 
-function App() {
+export default function App() {
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
   const onSubmit = data => console.log(data);
 
@@ -9,23 +9,27 @@ function App() {
 
     <form onSubmit={handleSubmit(onSubmit)}>
 
-      <label>first name:</label>
-      <input {...register("firstName", { required: true})}/>
+      <div class="field-wrapper">
+        <label>first name:</label>
+        <input {...register("firstName", { required: true})}/>
+      </div>
 
-      <label>second name:</label>
-      <input {...register("secondName", { required: true})}/>
+      <div class="field-wrapper">
+        <label>second name:</label>
+        <input {...register("secondName", { required: true})}/>
+      </div>
 
-      <label>postcode:</label>
-      <input {...register("postcode", { required: true})}/>
-
-      <input {...register("exampleRequired", { required: true })}/>
+      <div class="field-wrapper">
+        <label>postcode:</label>
+        <input {...register("postcode", { required: true})}/>
+      </div>
 
       {errors.exampleRequired && <span>This field is required</span>}
 
-      <input type="submit"/>
+      <input class="submit-button" type="submit"/>
 
     </form>
+
   );
 }
 
-export default App;
