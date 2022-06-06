@@ -2,12 +2,16 @@ import './App.css';
 import { useForm } from 'react-hook-form'
 
 export default function App() {
+
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
-  const onSubmit = data => console.log(data);
+
+  console.log(errors)
 
   return (
 
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit((data) => {
+      console.log(data)
+    })}>
 
       <div class="field-wrapper">
         <label>first name:</label>
@@ -24,9 +28,16 @@ export default function App() {
         <input {...register("postcode", { required: true})}/>
       </div>
 
-      {errors.exampleRequired && <span>This field is required</span>}
+      <div class="field-wrapper">
+        <label>country:</label>
+        <select {...register("country", { required: true})}>
+          <option value="england">England</option>
+          <option value="australia">Australia</option>
+          <option value="jamaica">Jamaica</option>
+        </select>
+      </div>
 
-      <input class="submit-button" type="submit"/>
+      <input className="submit-button" type="submit"/>
 
     </form>
 

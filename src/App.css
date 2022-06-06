@@ -1,6 +1,6 @@
 
 html {
-  background: #777;
+  background: #444;
 }
 
 form {
@@ -21,7 +21,7 @@ form {
 
 .submit-button {
   justify-self: end;
-  background: #222;
+  background: green;
   color: white;
   padding: 10px;
   border: none;
