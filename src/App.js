@@ -1,18 +1,23 @@
 import './App.css';
 import React, { useState, useMemo } from 'react'
+
 import { useForm } from 'react-hook-form'
+
 import Select from 'react-select'
 import countryList from 'react-select-country-list'
 
-export default function App() {
-  const [value, setValue] = useState('')
-  const options = useMemo(() => countryList().getData(), [])
 
-  const changeHandler = value => {
-    setValue(value)
+export default function App() {
+  const [country, setCountry] = useState('')
+  
+  const countryOptions = useMemo(() => countryList().getData(), [])
+
+  const changeCountryHandler = option => {
+    setCountry(option)
   }
 
   const { register, handleSubmit, formState: { errors } } = useForm();
+
   console.log("form errors", errors)
 
   return (
@@ -38,7 +43,7 @@ export default function App() {
 
       <div className="field-wrapper">
         <label>country:</label>
-        <Select options={options} value={value} onChange={changeHandler} />
+        <Select options={countryOptions} value={country} onChange={changeCountryHandler} />
       </div>
 
       <input className="submit-button" type="submit"/>
