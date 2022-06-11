@@ -4,7 +4,8 @@ html {
 }
 
 form {
-  width: calc(60% - 10px);
+  width: 80%;
+  max-width: 500px;
   margin: 50px auto;
   background: white;
   padding: 50px;
@@ -15,8 +16,13 @@ form {
 
 .field-wrapper {
   display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: 1fr 2fr;
+}
+
+@media ( min-width: 500px) {
+  .field-wrapper {
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 2fr;
+  }
 }
 
 .submit-button {
