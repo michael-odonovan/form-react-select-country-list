@@ -7,10 +7,12 @@ import Select from 'react-select'
 import countryList from 'react-select-country-list'
 
 export default function App() {
-  const [country, setCountry] = useState('')
-  const [formData, setFormData] = useState('')
-  
+
   const countryOptions = useMemo(() => countryList().getData(), [])
+
+  const [formData, setFormData] = useState('')
+  const [country, setCountry] = useState('')
+  
 
   const changeCountryHandler = option => {
     setCountry(option)
@@ -22,6 +24,7 @@ export default function App() {
 
     <form onSubmit={handleSubmit((data) => {
       setFormData(data)
+      setCountry(country)
     })}>
 
       <h3>Mock up of form with set country list</h3>
@@ -76,6 +79,7 @@ export default function App() {
       <div>{formData.addressLine3}</div>
       <div>{formData.postcode}</div>
       <div>{country.label}</div>
+
 
     </form>
 
