@@ -30,31 +30,37 @@ export default function App() {
         <label>first name:</label>
         <input {...register("firstName", { required: true })}/>
       </div>
+      {errors.firstName && <span>This field is required</span>}
 
       <div className="field-wrapper">
         <label>second name:</label>
         <input {...register("secondName", { required: true })}/>
       </div>
+      {errors.secondName && <span>This field is required</span>}
 
       <div className="field-wrapper">
         <label>address line 1</label>
         <input {...register("addressLine1", { required: true })}/>
       </div>
+      {errors.addressLine1 && <span>This field is required</span>}
 
       <div className="field-wrapper">
         <label>address line 2</label>
         <input {...register("addressLine2", { required: true })}/>
       </div>
+      {errors.addressLine2 && <span>This field is required</span>}
 
       <div className="field-wrapper">
         <label>address line 3</label>
         <input {...register("addressLine3", { required: true })}/>
       </div>
+      {errors.addressLine3 && <span>This field is required</span>}
 
       <div className="field-wrapper">
         <label>postcode:</label>
         <input {...register("postcode", { required: true })}/>
       </div>
+      {errors.postcode && <span>This field is required</span>}
 
       <div className="field-wrapper">
         <label>country:</label>
