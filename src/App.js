@@ -21,7 +21,6 @@ export default function App() {
   return (
 
     <form onSubmit={handleSubmit((data) => {
-      console.log(data)
       setFormData(data)
     })}>
 
@@ -76,7 +75,7 @@ export default function App() {
       <div>{formData.addressLine2}</div>
       <div>{formData.addressLine3}</div>
       <div>{formData.postcode}</div>
-      <div>{formData.country}</div>
+      <div>{country.label}</div>
 
     </form>
 
