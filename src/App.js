@@ -37,6 +37,21 @@ export default function App() {
       </div>
 
       <div className="field-wrapper">
+        <label>address line 1</label>
+        <input {...register("addressLine1", { required: true })}/>
+      </div>
+
+      <div className="field-wrapper">
+        <label>address line 2</label>
+        <input {...register("addressLine2", { required: true })}/>
+      </div>
+
+      <div className="field-wrapper">
+        <label>address line 3</label>
+        <input {...register("addressLine3", { required: true })}/>
+      </div>
+
+      <div className="field-wrapper">
         <label>postcode:</label>
         <input {...register("postcode", { required: true })}/>
       </div>
