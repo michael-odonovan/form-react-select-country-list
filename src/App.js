@@ -27,7 +27,7 @@ export default function App() {
       setCountry(country)
     })}>
 
-      <h3>Mock up of form with set country list</h3>
+      <h3>Mock up of form with set-country-list package</h3>
 
       <div className="field-wrapper">
         <label>first name:</label>
