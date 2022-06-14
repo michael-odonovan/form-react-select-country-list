@@ -80,9 +80,7 @@ export default function App() {
       <div>{formData.postcode}</div>
       <div>{country.label}</div>
 
-
     </form>
-
   );
 }
 
